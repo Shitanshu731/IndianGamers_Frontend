@@ -1,0 +1,47 @@
+.home{
+    background-color: rgba(184, 27, 27, 0.036);
+    backdrop-filter: blur(4px);
+    display : flex;
+    min-height: 70vh;
+}
+
+.checkbox_radio{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+.rightPortion{
+    flex-basis: 80%;
+    margin-bottom: 4rem;
+}
+.rightPortion h1{
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 15px #ff073a, 0 0 20px #ff073a, 0 0 25px #ff073a, 0 0 30px #ff073a, 0 0 35px #ff073a;
+}
+.allProductContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.eachCard{
+    box-shadow: 0 0 10px rgba(2, 4, 4, 0.5);
+    width : 18rem;
+}
+.sidebar{
+    padding: .7rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.sidebar h4{
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 15px #ff073a, 0 0 20px #ff073a, 0 0 25px #ff073a, 0 0 30px #ff073a, 0 0 35px #ff073a;
+}
+.cardBody{
+    padding: .5rem;
+}

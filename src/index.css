@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+/* font-family: 'Playfair Display', serif; */
+
+/* //navbar css */
+.navbar {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
+  border-bottom: solid gray !important;
+}
+
+.nav-link {
+  font-weight: 300 !important;
+}
+
+.active {
+  border-bottom: 2px solid black;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-family: "roboto", sans-serif;
+  letter-spacing: 3px;
+}
+/* =============================
+==========footer============= */
+
+.footer {
+  color: white;
+  padding: 25px;
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #434343,
+    #000000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000);
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.footer a:hover {
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba;
+}
+/* =================================
+======== page not found css ======= */
+.pnf {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.pnf-heading {
+  font-weight: normal;
+}
+
+.pnf-btn {
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+.pnf-btn:hover {
+  background-color: black;
+  color: white;
+}
+/* ========================================= */
+/* =========contact us ========= */
+.contactus {
+  margin: 0;
+  padding: 0;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================= */
+/* =========Register ========= */
+.register{
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  height : 70vh;
+  flex-direction: column;
+}
+
+/* SingleProductPage */
+
+/* Neon effect */
+.neon-text {
+  color: #ff073a; /* Red color */
+  text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 15px #ff073a, 0 0 20px #ff073a, 0 0 25px #ff073a, 0 0 30px #ff073a, 0 0 35px #ff073a;
+}
+
+/* Responsive container for the product */
+.singleProductContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* Styling for the image container */
+.img {
+  flex: 1 1 300px;
+  max-width: 100%;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for the image */
+.img img {
+  width: 100%;
+  height: auto;
+}
+
+/* Styling for the details section */
+.singleProductContainer .details {
+  flex: 1 1 300px;
+  max-width: 100%;
+  margin: 10px;
+  color: white;
+}
+
+/* Making details text have a neon effect */
+.singleProductContainer .details h3 {
+  margin: 10px 0;
+  padding: 5px;
+  border-bottom: 2px solid #ff073a;
+  display: flex;
+  text-decoration: none;
+  color: #062201;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ff073a, 0 0 15px #f2f7ee, 0 0 20px #ff073a, 0 0 25px #ff073a, 0 0 30px #eaeded, 0 0 35px #ff073a;
+}
+
+/* Styling for similar products section */
+.SimilarProductsContainer {
+  text-align: center;
+  padding: 20px;
+  color: #000000;
+  text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 15px #8a5c65, 0 0 20px #ff073a, 0 0 25px #ff073a, 0 0 30px #ff073a, 0 0 35px #ff073a;
+}
+.SimilarProducts{
+  position: relative;
+  width : 100%;
+  display : flex;
+  gap : 4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .singleProductContainer {
+    flex-direction: column;
+  }
+
+  .singleProductContainer .img, .details {
+    flex: 1 1 100%;
+  }
+}
+
+/* SingleProductPage */
+
+/* CategoryProduct */
+.productByCategories{
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
