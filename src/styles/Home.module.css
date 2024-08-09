@@ -1,14 +1,12 @@
 .home{
-    
     padding-top: 1rem;
     display : flex;
     min-height: 90vh;
     z-index: 10;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
     color : white;
 }
 .checkbox_radio{
-   
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
@@ -36,6 +34,7 @@
 .eachCard{
     box-shadow: 0 0 10px rgba(2, 4, 4, 0.5);
     width : 18rem;
+    color : white;
 }
 .sidebar{
     margin-left: 1rem;
@@ -54,11 +53,20 @@
 }
 .cardBody{
     padding: .5rem;
+    background-color: rgb(38, 34, 34);
+    color : white;
+}
+.cardBody h5{
+    color : white;
+    text-decoration: none;
+}
+.cardBody p{
+    color : white
 }
 .button{
     background-color:rgba(240, 1, 1, 0.841);
     border-radius: 10px;
-    padding:  .7rem 1rem .7rem 1rem;
+    padding:  .5rem 1.2rem .5rem 1.2rem;
     border : rgba(240, 1, 1, 0.841);
 }
 .button:hover{

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,8 +11,22 @@ import "./styles.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function SwiperPage() {
+  const [products, setProducts] = useState([]);
+  const getAllProducts = async () => {
+    try {
+      const { data } = await axios.get(`/api/v1/product/get-product`);
+      setProducts(data.products);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getAllProducts();
+  }, []);
   return (
     <>
       <Swiper
@@ -29,21 +43,16 @@ export default function SwiperPage() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="/images/skin1.jpeg" alt="asdasd" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://media.wired.com/photos/5ea0840cb0490300086261e3/master/pass/Cul-Reveal_ReactorA_VALORANT.jpg"
-            alt="asdasd"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://media.wired.com/photos/5ea0840cb0490300086261e3/master/pass/Cul-Reveal_ReactorA_VALORANT.jpg"
-            alt="asdasd"
-          />
-        </SwiperSlide>
+        {products?.map((p) => (
+          <SwiperSlide key={p._id} className={`card m-1`}>
+            <Link to={`/product/${p.slug}`}>
+              <img
+                src={`/api/v1/product/product-photo/${p._id}`}
+                alt={p.name}
+              />
+            </Link>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

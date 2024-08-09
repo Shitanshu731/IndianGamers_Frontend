@@ -38,8 +38,10 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <Link to="/" className="navbar-brand">
               🛒{" "}
-              <span style={{ color: "red", fontFamily: "fantasy" }}>Valo</span>
-              Cart
+              <span style={{ color: "red", fontFamily: "fantasy" }}>
+                Indian
+              </span>
+              Gamers
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <SearchInput />

@@ -8,37 +8,40 @@
   }
   
   body {
-    background-color: rgba(4, 4, 4, 0.914);
+    background-image: url("https://mrwallpaper.com/images/hd/join-the-fight-and-become-an-agent-of-valorant-xpognbgk8tu2bor7.jpg");
+    background-size: cover;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
     margin: 0;
     padding: 0;
+    object-fit: contain;
    
   }
   
   .swiper {
     width: 76vw;
     height: 50vh;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(240, 1, 1, 0.841);
+    outline : none;
+    border : 0;
   }
   
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+
   
     /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
   }
   
   .swiper-slide img {
     display: block;
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    height : 54vh;
     
   }
   

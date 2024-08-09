@@ -13,7 +13,7 @@ const Categories = () => {
             <div className="col-md-6 mt-5 mb-3 gx-3 gy-3">
               <Link
                 to={`/category/${c.slug}`}
-                className="btn btn-primary text-light"
+                className="btn btn-danger text-light"
               >
                 {c.name}
               </Link>
