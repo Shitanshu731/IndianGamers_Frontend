@@ -1,16 +1,22 @@
 .home{
-    background-color: rgba(184, 27, 27, 0.036);
-    backdrop-filter: blur(4px);
+    
+    padding-top: 1rem;
     display : flex;
-    min-height: 70vh;
+    min-height: 90vh;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    color : white;
 }
-
 .checkbox_radio{
+   
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
     margin-left: 1rem;
     margin-bottom: 1rem;
+}
+.checkbox_radio .checkbox,.checkbox_radio .radio{
+    color: azure;
 }
 .rightPortion{
     flex-basis: 80%;
@@ -19,29 +25,46 @@
 .rightPortion h1{
     font-size: 24px;
     font-weight: 600;
-    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 15px #ff073a, 0 0 20px #ff073a, 0 0 25px #ff073a, 0 0 30px #ff073a, 0 0 35px #ff073a;
+    margin-left: 1.5rem;
+    padding-top: 1rem;
 }
 .allProductContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    margin-left : 1rem;
 }
 .eachCard{
     box-shadow: 0 0 10px rgba(2, 4, 4, 0.5);
     width : 18rem;
 }
 .sidebar{
+    margin-left: 1rem;
+    border-radius: 10px;
     padding: .7rem;
     display: flex;
     flex-direction: column;
     flex-basis: 20%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(240, 1, 1, 0.841);
+    background-size: cover;
 }
 .sidebar h4{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
-    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 15px #ff073a, 0 0 20px #ff073a, 0 0 25px #ff073a, 0 0 30px #ff073a, 0 0 35px #ff073a;
+    
 }
 .cardBody{
     padding: .5rem;
+}
+.button{
+    background-color:rgba(240, 1, 1, 0.841);
+    border-radius: 10px;
+    padding:  .7rem 1rem .7rem 1rem;
+    border : rgba(240, 1, 1, 0.841);
+}
+.button:hover{
+    box-shadow: 0 0 10px rgba(240, 1, 1, 0.841);
+    transform: scale(0.9);
+    transition: .4s;
+    border : rgba(240, 1, 1, 0.841);
+    border-bottom: 1rem;
 }

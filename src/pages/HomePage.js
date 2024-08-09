@@ -7,6 +7,8 @@ import { Checkbox, Radio } from "antd";
 import { prices } from "../components/Prices";
 import { useCart } from "../context/cart";
 import styles from "../styles/Home.module.css";
+import SwiperPage from "../components/Layout/Swiper/SwiperPage";
+import Footer from "../components/Layout/Footer";
 const HomePage = () => {
   const [cart, setCart] = useCart();
   const navigate = useNavigate();
@@ -105,6 +107,7 @@ const HomePage = () => {
               <Checkbox
                 key={c._id}
                 onChange={(e) => handleFilter(e.target.checked, c._id)}
+                className={styles.checkbox}
               >
                 {c.name}
               </Checkbox>
@@ -115,14 +118,16 @@ const HomePage = () => {
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {prices?.map((p) => (
                 <div key={p._id}>
-                  <Radio value={p.array}>{p.name}</Radio>
+                  <Radio className={styles.radio} value={p.array}>
+                    {p.name}
+                  </Radio>
                 </div>
               ))}
             </Radio.Group>
           </div>
           <div className="m-3 w-28">
             <button
-              className="btn btn-danger px-4"
+              className={styles.button}
               onClick={() => window.location.reload()}
             >
               Reset Filters
@@ -130,7 +135,8 @@ const HomePage = () => {
           </div>
         </div>
         <div className={styles.rightPortion}>
-          <h1 className="text-center">All Products</h1>
+          <SwiperPage />
+          <h1>All Products</h1>
           <div className={styles.allProductContainer}>
             {products?.map((p) => (
               <div key={p._id} className={`card m-1 ${styles.eachCard}`}>
@@ -149,7 +155,7 @@ const HomePage = () => {
                     </p>
                   </Link>
                   <button
-                    className="btn btn-primary ms-1"
+                    className={`${styles.button} ms-1`}
                     onClick={() => navigate(`/product/${p.slug}`)}
                   >
                     More Details
