@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Search = () => {
   const [values, setValues] = useSearch();
+  const port = process.env.REACT_APP_API || "http://localhost:8080";
   return (
     <Layout title={"Search results"}>
       <div className="container">
@@ -20,7 +21,7 @@ const Search = () => {
               <Link key={p._id} to={`/dashboard/admin/products/${p.slug}`}>
                 <div className="card m-2" style={{ width: "18rem" }}>
                   <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
+                    src={`${port}/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
                     height={"150px"}
                     alt={p.name}
