@@ -82,6 +82,20 @@ const HomePage = () => {
   //   setChecked(all);
   // };
 
+  const addToCart = (product) => {
+    let myCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProductIndex = myCart.findIndex(item => item._id === product._id);
+
+    if (existingProductIndex !== -1) {
+      myCart[existingProductIndex].quantity += 1;
+    } else {
+      myCart.push({ ...product, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(myCart));
+    setCart(myCart);
+  };
+
   const laodMore = async () => {
     try {
       setLoading(true);
@@ -128,14 +142,7 @@ const HomePage = () => {
                   </button>
                   <button
                     className="btn btn-secondary ms-1"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      localStorage.setItem(
-                        "cart",
-                        JSON.stringify([...cart, p])
-                      );
-                      toast.success("Item Added to Cart");
-                    }}
+                    onClick={() => {addToCart(p)}}
                   >
                     Add to Cart
                   </button>

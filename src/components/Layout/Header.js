@@ -39,8 +39,14 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link to="/" className="navbar-brand">
-              🛒{" "}
+            <Link to="/" className="navbar-brand items-center">
+              <img
+                src="/favicon.ico"
+                height="38px"
+                width="38px"
+                alt="logo"
+                style={{ borderRadius: "50%" }}
+              />
               <span style={{ color: "red", fontFamily: "fantasy" }}>
                 Indian
               </span>
@@ -130,7 +136,7 @@ const Header = () => {
               )}
               <li className="nav-item">
                 <Badge count={cart?.length} showZero>
-                  <NavLink to="/cart" className="nav-link">
+                  <NavLink to="/cart" className={`${styles.navLinkCart}`}>
                     Cart
                   </NavLink>
                 </Badge>
