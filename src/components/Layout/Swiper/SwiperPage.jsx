@@ -16,9 +16,10 @@ import axios from "axios";
 
 export default function SwiperPage() {
   const [products, setProducts] = useState([]);
+  const port = process.env.REACT_APP_API || "http://localhost:8080";
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/product/get-product`);
+      const { data } = await axios.get(`${port}/api/v1/product/get-product`);
       setProducts(data.products);
     } catch (error) {
       console.log(error);
@@ -45,9 +46,9 @@ export default function SwiperPage() {
       >
         {products?.map((p) => (
           <SwiperSlide key={p._id} className={`card m-1`}>
-            <Link to={`/product/${p.slug}`}>
+            <Link to={`${port}/product/${p.slug}`}>
               <img
-                src={`/api/v1/product/product-photo/${p._id}`}
+                src={`${port}/api/v1/product/product-photo/${p._id}`}
                 alt={p.name}
               />
             </Link>

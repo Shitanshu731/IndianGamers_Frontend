@@ -1,6 +1,5 @@
 {
   "name": "indian_gamers.pvt.ltd",
-  "proxy": "https://indians-gamers-backend.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

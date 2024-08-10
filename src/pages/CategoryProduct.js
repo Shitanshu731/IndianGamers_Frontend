@@ -11,11 +11,11 @@ const CategoryProduct = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [cart, setCart] = useCart();
-
+  const port = process.env.REACT_APP_API || "http://localhost:8080";
   const getProductByCat = async () => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/product-category/${params.slug}`
+        `${port}/api/v1/product/product-category/${params.slug}`
       );
       setProducts(data?.products);
       setCategory(data?.category);
@@ -51,7 +51,7 @@ const CategoryProduct = () => {
           {products?.map((p) => (
             <div key={p._id} className={styles.productCard}>
               <img
-                src={`/api/v1/product/product-photo/${p._id}`}
+                src={`${port}/api/v1/product/product-photo/${p._id}`}
                 className={styles.productImage}
                 alt={p.name}
               />

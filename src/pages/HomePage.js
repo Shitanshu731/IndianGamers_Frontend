@@ -19,10 +19,10 @@ const HomePage = () => {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-
+  const port = process.env.REACT_APP_API || "http://localhost:8080";
   const getTotal = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/product-count");
+      const { data } = await axios.get(`${port}/api/v1/product/product-count`);
       setTotal(data?.total);
     } catch (error) {
       console.log(error);
@@ -30,7 +30,7 @@ const HomePage = () => {
   };
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/category/get-category`);
+      const { data } = await axios.get(`${port}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -47,7 +47,7 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/get-product`);
+      const { data } = await axios.get(`${port}/api/v1/product/get-product`);
       setProducts(data.products);
       setLoading(false);
     } catch (error) {
@@ -64,7 +64,7 @@ const HomePage = () => {
 
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post("/api/v1/product/product-filters", {
+      const { data } = await axios.post(`${port}/api/v1/product/product-filters`, {
         checked,
         radio,
       });
@@ -99,7 +99,7 @@ const HomePage = () => {
   const laodMore = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`${port}/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts([...products, data?.products]);
     } catch (error) {
@@ -121,7 +121,7 @@ const HomePage = () => {
             {products?.map((p) => (
               <div key={p._id} className={`card m-1 ${styles.eachCard}`}>
                 <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
+                  src={`${port}/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   height={"150px"}
                   alt={p.name}

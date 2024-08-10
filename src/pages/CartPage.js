@@ -300,7 +300,7 @@ const CartPage = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
-
+  const port = process.env.REACT_APP_API || "http://localhost:8080";
   // Aggregate duplicate items
   const aggregateCartItems = () => {
     const aggregated = {};
@@ -385,7 +385,7 @@ const CartPage = () => {
 
   const getToken = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/braintree/token");
+      const { data } = await axios.get(`${port}/api/v1/product/braintree/token`);
       setClientToken(data?.clientToken);
     } catch (error) {
       console.log(error);
@@ -401,7 +401,7 @@ const CartPage = () => {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
       const { data } = await axios.post(
-        "/api/v1/product/braintree/payment",
+        `${port}/api/v1/product/braintree/payment`,
         {
           nonce,
           cart,
@@ -459,7 +459,7 @@ const CartPage = () => {
               <div key={item._id} className={styles.cartItem}>
                 <div className={styles.imageContainer}>
                   <img
-                    src={`/api/v1/product/product-photo/${item._id}`}
+                    src={`${port}/api/v1/product/product-photo/${item._id}`}
                     className={styles.itemImage}
                     alt={item.name}
                   />

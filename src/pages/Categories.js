@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Categories = () => {
   const categories = useCategory();
+  const port = process.env.REACT_APP_API || "http://localhost:8080";
   return (
     <Layout title={"All Categories"}>
       <div className="container">
@@ -12,7 +13,7 @@ const Categories = () => {
           {categories.map((c) => (
             <div className="col-md-6 mt-5 mb-3 gx-3 gy-3">
               <Link
-                to={`/category/${c.slug}`}
+                to={`${port}/category/${c.slug}`}
                 className="btn btn-danger text-light"
               >
                 {c.name}
