@@ -1,0 +1,124 @@
+.container {
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .cart {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .cartItems {
+    flex: 2;
+  }
+  
+  .cartItem {
+    display: flex;
+    border: 0px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .itemImage {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .itemDetails {
+    flex: 2;
+    padding-left: 10px;
+  }
+  
+  .quantityControl {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .quantityControl button {
+    background-color: black;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .removeButton {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: black;
+    border: 0.5px solid #ddd;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    background-color: black;
+    cursor: not-allowed;
+  }
+  
+  .activePage {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+  }
+  
+  .summary {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .address {
+    margin-bottom: 20px;
+  }
+  
+  .updateAddressButton {
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .payment {
+    margin-top: 20px;
+  }
+  
+  .paymentButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .paymentButton:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
