@@ -28,7 +28,7 @@ Layout.defaultProps = {
   title: "ValoCart - Shop now",
   description: "Mern Stack project",
   keywords: "Mern, React, MongoDb, Express",
-  author: "Shitanshu",
+  author: "Shitanshu & Shivam",
 };
 
 export default Layout;

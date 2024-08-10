@@ -6,11 +6,13 @@ import SearchInput from "../Form/SearchInput";
 import useCategory from "../../context/hooks/useCategory";
 import { useCart } from "../../context/cart";
 import { Badge } from "antd";
+import styles from "../../styles/Header.module.css"; // Importing the CSS module
 
 const Header = () => {
   const [cart] = useCart();
   const categories = useCategory();
   const [auth, setAuth] = useAuth();
+
   const handleLogout = () => {
     setAuth({
       ...auth,
@@ -20,9 +22,10 @@ const Header = () => {
     localStorage.clear();
     toast.success("Logout successfully!!");
   };
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -46,7 +49,7 @@ const Header = () => {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <SearchInput />
               <li className="nav-item">
-                <NavLink to="/" className="nav-link ">
+                <NavLink to="/" className="nav-link">
                   Home
                 </NavLink>
               </li>
@@ -60,16 +63,16 @@ const Header = () => {
                   Categories
                 </Link>
 
-                <ul className="dropdown-menu">
+                <ul className={`dropdown-menu ${styles.dropdownMenu}`}>
                   <li>
-                    <Link className="dropdown-item" to={`/categories`}>
+                    <Link className={`dropdown-item ${styles.dropdownItem}`} to={`/categories`}>
                       All Categories
                     </Link>
                   </li>
                   {categories?.map((c) => (
-                    <li>
+                    <li key={c.slug}>
                       <Link
-                        className="dropdown-item"
+                        className={`dropdown-item ${styles.dropdownItem}`}
                         to={`/category/${c.slug}`}
                       >
                         {c.name}
@@ -101,7 +104,7 @@ const Header = () => {
                     >
                       {auth?.user?.name}
                     </li>
-                    <ul className="dropdown-menu">
+                    <ul className={`dropdown-menu  ${styles.name}`}>
                       <li>
                         <NavLink
                           to={`/dashboard/${

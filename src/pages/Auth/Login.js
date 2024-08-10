@@ -4,6 +4,8 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth";
+import styles from "../../styles/Login.module.css";
+
 
 const Login = () => {
   const [auth, setAuth] = useAuth();
@@ -12,6 +14,7 @@ const Login = () => {
   const port = process.env.REACT_APP_API || "http://localhost:8080";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -20,7 +23,7 @@ const Login = () => {
         email,
       });
       if (res && res.data.success) {
-        toast.success(res && res.data.message);
+        toast.success(res.data.message);
         setAuth({
           ...auth,
           user: res.data.user,
@@ -35,21 +38,23 @@ const Login = () => {
       console.log(error);
       toast.error("Something Went Wrong.");
     }
-    console.log(process.env.REACT_APP_API);
   };
+
   return (
     <Layout title={"Login - ValoCart"}>
-      <div className="register">
+      <div className={styles.login}>
         <h1>Login</h1>
+        <hr></hr>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
-              class="form-control"
+              className="form-control"
               id="exampleInputEmail1"
               placeholder="Enter email"
+              required
             />
           </div>
 
@@ -58,26 +63,31 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
-              class="form-control"
+              className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
+              required
             />
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <button
-              type="button"
-              className="btn btn-primary mb-3"
+          <div>
+            <div
+              className={`${styles.ForgetPassword}`}
               onClick={() => navigate("/forgot-password")}
             >
               Forget Password
-            </button>
-            <button type="submit" className="btn btn-primary mb-3">
-              Submit
-            </button>
-            <h5>Create a new acount?</h5>
-            <NavLink to="/register" className="nav-link">
-              SignUp
-            </NavLink>
+            </div>
+            <div className={`${styles.cr}`}>
+              <button type="submit" className={styles.loginButton}>
+                Login
+              </button>
+
+              <NavLink to="/register" className="nav-link">
+                <h6>
+                  <span style={{ color: "red" }}>Create a new account?</span>{" "}
+                  SignUp
+                </h6>
+              </NavLink>
+            </div>
           </div>
         </form>
       </div>

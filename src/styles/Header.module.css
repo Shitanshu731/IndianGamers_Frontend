@@ -1,0 +1,23 @@
+.navbar {
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+  }
+  
+  .navbar-toggler {
+    border: none; 
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,..."); 
+  }
+  
+  .navbar-nav .nav-link {
+    color: #000;
+  }
+  

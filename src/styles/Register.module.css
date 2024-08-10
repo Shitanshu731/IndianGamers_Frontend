@@ -1,0 +1,104 @@
+.registerContainer {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin-top: 8%;
+    margin-left: 40%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+
+  .registerTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+
+  }
+  
+ .formGroup input {
+  background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+     border-radius: 20px;
+     border: 1px solid #2d9fd9;
+     width: 360px;
+     height: 45px;
+     padding-left: 10px;
+     margin-top: 10px;
+     color: whitesmoke;
+ }
+ .formGroup input::placeholder {
+  color: whitesmoke;
+}
+ .formGroup input:focus{
+  outline: none;
+  background: white; /* Background color when focused */
+  color: black; /* Text color when focused */
+  border: 1px solid #2d9fd9;
+ }
+ 
+  
+  
+  .registerForm .btnPrimary {
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+     border-radius: 20px;
+     border: 1px solid #2d9fd9;
+     width: 360px;
+     height: 45px;
+     padding-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .registerForm .btnPrimary:hover {
+    background-color: #a9a9a9; 
+    color: #000;
+  }
+  
+  .loginLink {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .loginLink .navLink {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  .loginLink .navLink h6{
+    color:aliceblue;
+    font-weight:bold;
+    font-size: 20px;
+  }
+  .loginLink .navLink h6 span{
+    font-size: 16px;
+  }
+  
+  .validationContainer {
+    margin-top: 10px;
+  }
+  
+  .valid {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .invalid {
+    color: red;
+    font-weight: bold;
+  }
+  
+  
+  

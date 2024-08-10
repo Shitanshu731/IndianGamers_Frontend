@@ -72,15 +72,15 @@ const HomePage = () => {
     } catch (error) {}
   };
 
-  const handleFilter = async (value, id) => {
-    let all = [...checked];
-    if (value) {
-      all.push(id);
-    } else {
-      all = all.filter((c) => c !== id);
-    }
-    setChecked(all);
-  };
+  // const handleFilter = async (value, id) => {
+  //   let all = [...checked];
+  //   if (value) {
+  //     all.push(id);
+  //   } else {
+  //     all = all.filter((c) => c !== id);
+  //   }
+  //   setChecked(all);
+  // };
 
   const laodMore = async () => {
     try {
@@ -98,42 +98,8 @@ const HomePage = () => {
     laodMore();
   }, [page]);
   return (
-    <Layout title={"All Products - Best Offers"}>
+    <Layout title={"Indian Gamers"}>
       <div className={styles.home}>
-        <div className={styles.sidebar}>
-          <h4>Filter By Cateogory</h4>
-          <div className={styles.checkbox_radio}>
-            {categories?.map((c) => (
-              <Checkbox
-                key={c._id}
-                onChange={(e) => handleFilter(e.target.checked, c._id)}
-                className={styles.checkbox}
-              >
-                {c.name}
-              </Checkbox>
-            ))}
-          </div>
-          <h4>Filter By Prices</h4>
-          <div className={styles.checkbox_radio}>
-            <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-              {prices?.map((p) => (
-                <div key={p._id}>
-                  <Radio className={styles.radio} value={p.array}>
-                    {p.name}
-                  </Radio>
-                </div>
-              ))}
-            </Radio.Group>
-          </div>
-          <div className="m-3 w-28">
-            <button
-              className={styles.button}
-              onClick={() => window.location.reload()}
-            >
-              Reset Filters
-            </button>
-          </div>
-        </div>
         <div className={styles.rightPortion}>
           <SwiperPage />
           <h1>All Products</h1>
@@ -149,9 +115,9 @@ const HomePage = () => {
                 <div className={styles.cardBody}>
                   <Link to={`/dashboard/admin/products/${p.slug}`}>
                     <h5 className="card-title">{p.name}</h5>
-                    <h5 className="card-title">${p.price}</h5>
+                    <h5 className="card-title">&#8377;{p.price}</h5>
                     <p className="card-text">
-                      {p.description.substring(0, 10)}...
+                      {p.description.substring(0, 20)}...
                     </p>
                   </Link>
                   <button

@@ -17,7 +17,7 @@
   font-size: 17px;
   line-height: 26px;
   text-transform: uppercase;
-  box-shadow: 0 8px 6px -6px gray;
+  /* box-shadow: 0 8px 6px -6px gray; */
   --webkit-box-shadow: 0 8px 6px -6px gray;
   border-bottom: solid gray !important;
 }
@@ -35,6 +35,7 @@
   font-family: "roboto", sans-serif;
   letter-spacing: 3px;
 }
+
 /* =============================
 ==========footer============= */
 

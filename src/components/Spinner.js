@@ -17,7 +17,7 @@ const Spinner = ({ path = "login" }) => {
   }, [count, navigate]);
   return (
     <div
-      className="d-flex justify-content-center text-red-400"
+      className="d-flex justify-content-center text-white-400"
       style={{ height: "100vh" }}
     >
       <h1 className="text-red-700">Redirecting to you in {count} seconds.</h1>
