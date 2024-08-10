@@ -26,8 +26,8 @@ const Layout = ({ children, author, title, descriptions, keywords }) => {
 
 Layout.defaultProps = {
   title: "ValoCart - Shop now",
-  description: "Mern Stack project",
-  keywords: "Mern, React, MongoDb, Express",
+  description: "Indian Gamers - A Skin Selling B2C Startup",
+  keywords: "Valorant, Gaming, Accounts, Skins, Vandal, Phantom",
   author: "Shitanshu & Shivam",
 };
 
