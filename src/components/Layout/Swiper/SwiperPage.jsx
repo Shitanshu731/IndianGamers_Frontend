@@ -46,7 +46,7 @@ export default function SwiperPage() {
       >
         {products?.map((p) => (
           <SwiperSlide key={p._id} className={`card m-1`}>
-            <Link to={`${port}/product/${p.slug}`}>
+            <Link to={`/product/${p.slug}`}>
               <img
                 src={`${port}/api/v1/product/product-photo/${p._id}`}
                 alt={p.name}
