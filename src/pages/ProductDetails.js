@@ -7,11 +7,12 @@ const ProductDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
+  const port = process.env.REACT_APP_API || "http://localhost:8080";
   const [relatedProducts, setRelatedProducts] = useState([]);
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/get-product/${params.slug}`
+        `${port}/api/v1/product/get-product/${params.slug}`
       );
       setProduct(data?.product);
       getSimilarProducts(data?.product._id, data?.product.category._id);
@@ -22,7 +23,7 @@ const ProductDetails = () => {
   const getSimilarProducts = async (pid, cid) => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/related-products/${pid}/${cid}`
+        `${port}/api/v1/product/related-products/${pid}/${cid}`
       );
       setRelatedProducts(data?.products);
     } catch (error) {
@@ -38,7 +39,7 @@ const ProductDetails = () => {
       <div className="p-4 singleProductContainer">
         <div className="p-3 sm:w-96 img">
           <img
-            src={`/api/v1/product/product-photo/${product._id}`}
+            src={`${port}/api/v1/product/product-photo/${product._id}`}
             alt={product.name}
             width={"100%"}
             height={"300px"}
@@ -60,7 +61,7 @@ const ProductDetails = () => {
           {relatedProducts?.map((p) => (
             <div key={p._id} className="card m-2" style={{ width: "18rem" }}>
               <img
-                src={`/api/v1/product/product-photo/${p._id}`}
+                src={`${port}/api/v1/product/product-photo/${p._id}`}
                 className="card-img-top"
                 height={"150px"}
                 alt={p.name}
